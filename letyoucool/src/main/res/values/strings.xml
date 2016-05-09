@@ -5,4 +5,8 @@
     <string name="toolbar_title_left">左边</string>
     <string name="toolbar_title">标题</string>
     <string name="toolbar_title_right">右边</string>
+
+    <string name="news">新闻</string>
+    <string name="weather">天气</string>
+    <string name="personal">我的</string>
 </resources>

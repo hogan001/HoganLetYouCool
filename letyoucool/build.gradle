@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:/Users/chenhu/.android/debug.keystore')
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
     defaultConfig {
         applicationId "com.hogan.letyoucool"
         minSdkVersion 15
@@ -26,4 +30,6 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'com.google.code.gson:gson:2.6.2'
     compile project(':okhttp-manager-library')
+    compile 'com.bigkoo:svprogresshud:1.0.2'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

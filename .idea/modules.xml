@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AS0507.iml" filepath="$PROJECT_DIR$/AS0507.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HoganMySlefPragment.iml" filepath="$PROJECT_DIR$/HoganMySlefPragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/letyoucool/letyoucool.iml" filepath="$PROJECT_DIR$/letyoucool/letyoucool.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttp-manager-library/okhttp-manager-library.iml" filepath="$PROJECT_DIR$/okhttp-manager-library/okhttp-manager-library.iml" />
     </modules>

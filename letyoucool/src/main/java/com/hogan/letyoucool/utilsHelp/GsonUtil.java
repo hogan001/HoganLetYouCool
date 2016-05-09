@@ -2,6 +2,7 @@ package com.hogan.letyoucool.utilsHelp;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.hogan.letyoucool.toastLogUtils.LogUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class GsonUtil {
 	public static <T> T changeGsonToBean(String gsonString, Class<T> cls) {
 		Gson gson = new Gson();
 		T t = gson.fromJson(gsonString, cls);
+		LogUtil.e(t.toString());
 		return t;
 	}
 

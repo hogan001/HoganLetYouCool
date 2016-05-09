@@ -6,6 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.hogan.letyoucool.R;
+
+import butterknife.Bind;
 
 /**
  * 作者：hogan
@@ -13,29 +18,26 @@ import android.view.ViewGroup;
  * 描述：Fragment基类
  */
 public abstract class BaseFragment extends Fragment {
-
     private View rootView;
     private Context mContext;
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initData();
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = initView(inflater);
+        initData();
         return rootView;
     }
 
-    protected abstract void initData();
     protected abstract View initView(LayoutInflater inflater);
+
+    protected abstract void initData();
+
 }
