@@ -3,5 +3,8 @@
 
     <declare-styleable name="TabWidget">
         <attr name="bottom_labels" format="reference" />
+        <attr name="border_outside_color" format="color"></attr>
     </declare-styleable>
+
+    <attr name="bg_frag_attent" format="reference" />
 </resources>

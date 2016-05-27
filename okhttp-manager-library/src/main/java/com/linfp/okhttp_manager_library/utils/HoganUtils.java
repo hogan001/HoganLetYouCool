@@ -40,6 +40,26 @@ public class HoganUtils {
                   .execute(callback);
 
       }
+
+    /**
+     *  @param params
+     *  @param  url
+     *  @param tag
+     *  @param callback
+     *  四个参数的GET请求
+     *
+     * */
+      public void getNetworkRequestHead(Map<String,String> params,   String url, String tag,StringCallback callback){
+          OkHttpUtils.get()
+                  .addHeader("apikey","6b9c319d7262be59e3c76129a3a8b138")
+                  .params(params)
+                  .url(url)
+                  .tag(tag)
+                  .build()
+                  .execute(callback);
+
+      }
+
     /**
      *  @param params
      *  @param  url

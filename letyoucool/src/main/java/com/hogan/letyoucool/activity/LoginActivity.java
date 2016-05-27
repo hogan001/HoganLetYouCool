@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * 作者: 陈虎
  * 日期: 2016/5/9  14:37
- * 描述:
+ * 描述: 主界面
  */
 public class LoginActivity extends BaseActivity {
     @Bind(R.id.login)

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.hogan.letyoucool.R;
 import com.hogan.letyoucool.application.AppManager;
 import com.hogan.letyoucool.fragment.MeFragment;
-import com.hogan.letyoucool.fragment.NewsFragment;
+import com.hogan.letyoucool.fragment.WXAppBaseFragment;
 import com.hogan.letyoucool.fragment.WeatherFragment;
 import com.hogan.letyoucool.toastLogUtils.ToastManager;
 import com.hogan.letyoucool.url.ConstantValues;
@@ -21,7 +21,6 @@ import com.hogan.letyoucool.view.MyTabWidget;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -37,7 +36,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private Context mContext;
     private FragmentManager mFragmentManager;
     private int mIndex = ConstantValues.HOME_FRAGMENT_INDEX;
-    private Fragment newsFragment, weatherFragment, meFragment;
+    private Fragment WXBaseFragment, weatherFragment, meFragment;
 
     @Override
     protected void initView() {
@@ -47,10 +46,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
          */
         ButterKnife.bind(this);
         mContext = this;
+        iv_back.setVisibility(View.GONE);
         iv_back.setOnClickListener(this);
         mFragmentManager = getSupportFragmentManager();
         mTabWidget.setOnTabSelectedListener(this);
-        //add
     }
 
     @Override
@@ -92,13 +91,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         hideFragments(transaction);
         switch (index) {
             case ConstantValues.HOME_FRAGMENT_INDEX:
-                if (null == newsFragment) {
-                    newsFragment = new NewsFragment();
-                    transaction.add(R.id.center_layout, newsFragment);
+                if (null == WXBaseFragment) {
+                    WXBaseFragment = new WXAppBaseFragment();
+                    transaction.add(R.id.center_layout, WXBaseFragment);
                 } else {
-                    transaction.show(newsFragment);
+                    transaction.show(WXBaseFragment);
                 }
-                titleName.setText("新闻");
+                titleName.setText("头条");
                 break;
             case ConstantValues.NEWS_FRAGMENT_INDEX:
                 if (null == weatherFragment) {
@@ -128,8 +127,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void hideFragments(FragmentTransaction transaction) {
-        if (null != newsFragment) {
-            transaction.hide(newsFragment);
+        if (null != WXBaseFragment) {
+            transaction.hide(WXBaseFragment);
         }
         if (null != weatherFragment) {
             transaction.hide(weatherFragment);

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.hogan.letyoucool.R;
+import com.hogan.letyoucool.toastLogUtils.LogUtil;
 
 import butterknife.ButterKnife;
 
@@ -18,6 +19,7 @@ public class WeatherFragment extends BaseFragment {
     protected View initView(LayoutInflater inflater) {
         rootView = inflater.inflate(R.layout.weather_fragment,null);
         ButterKnife.bind(this,rootView);
+        LogUtil.e("WeatherFragment oncreate");
         return rootView;
     }
 

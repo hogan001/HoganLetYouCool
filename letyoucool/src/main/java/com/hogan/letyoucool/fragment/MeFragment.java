@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.hogan.letyoucool.R;
 import com.hogan.letyoucool.bean.EmployeeLandingBean;
 import com.hogan.letyoucool.toastLogUtils.DataLoadingDialog;
+import com.hogan.letyoucool.toastLogUtils.LogUtil;
 import com.hogan.letyoucool.url.HttpUrl;
 import com.linfp.okhttp_manager_library.callback.StringCallback;
 import com.linfp.okhttp_manager_library.utils.HoganUtils;
@@ -42,54 +43,16 @@ public class MeFragment extends BaseFragment {
     protected View initView(LayoutInflater inflater) {
        rootView = inflater.inflate(R.layout.me_fragment,null);
         ButterKnife.bind(this,rootView);
+        LogUtil.e("MeFragment oncreate");
         return rootView;
     }
 
     @Override
     protected void initData() {
         mContext =getActivity();
-        Login();
 
     }
-    private void Login() {
-        HashMap<String, String> params = new HashMap<String, String>();
-        params.put("rad", System.currentTimeMillis() + "");
-        params.put("companyCode", "000001");
-        params.put("client", "1");
-        params.put("type", "1");
-        params.put("loginid", "156622");
-        params.put("pwd", "123456");
-        params.put("phonetype", "android");
-        params.put("uniquecode", "867299021714134");
-        HoganUtils.getInstance().getNetworkRequest(params, HttpUrl.NEWS, "tag", new StringCallback() {
-            @Override
-            public void onBefore(Request request) {
-                super.onBefore(request);
-                DataLoadingDialog.getInstance().show(mContext, "数据加载中...");
-            }
 
-            @Override
-            public void onAfter() {
-                super.onAfter();
-                DataLoadingDialog.getInstance().dismiss();
-            }
-
-            @Override
-            public void onError(Call call, Exception e) {
-                Log.e("onError", e.toString());
-            }
-
-            @Override
-            public void onResponse(String response) {
-                Log.e("onResponse", response);
-                news.setText(response);
-                Gson gson = new Gson();
-                EmployeeLandingBean bean1 = gson.fromJson(response, EmployeeLandingBean.class);
-                Log.e("tag", bean1.getToken() + "___" + bean1.getCompanyName() + "___" + bean1.getEdiname() + "__" + bean1.getJobNumber());
-            }
-        });
-
-    }
 
 
 }

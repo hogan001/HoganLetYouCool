@@ -6,5 +6,6 @@ package com.hogan.letyoucool.url;
  * 描述:
  */
 public class HttpUrl {
-    public static final String NEWS ="http://203.86.25.4:9000/V1.2/AUTH/Auth/Login";
+    /**微信头条*/
+    public static final String NEWS ="http://apis.baidu.com/3023/weixin/channel";
 }
