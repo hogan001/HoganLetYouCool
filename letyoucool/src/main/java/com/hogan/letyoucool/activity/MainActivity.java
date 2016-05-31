@@ -13,11 +13,13 @@ import android.widget.TextView;
 import com.hogan.letyoucool.R;
 import com.hogan.letyoucool.application.AppManager;
 import com.hogan.letyoucool.fragment.MeFragment;
-import com.hogan.letyoucool.fragment.WXAppBaseFragment;
+import com.hogan.letyoucool.fragment.WXBaseFragment;
 import com.hogan.letyoucool.fragment.WeatherFragment;
 import com.hogan.letyoucool.toastLogUtils.ToastManager;
 import com.hogan.letyoucool.url.ConstantValues;
 import com.hogan.letyoucool.view.MyTabWidget;
+
+import net.youmi.android.spot.SpotManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -92,7 +94,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         switch (index) {
             case ConstantValues.HOME_FRAGMENT_INDEX:
                 if (null == WXBaseFragment) {
-                    WXBaseFragment = new WXAppBaseFragment();
+                    WXBaseFragment = new WXBaseFragment();
                     transaction.add(R.id.center_layout, WXBaseFragment);
                 } else {
                     transaction.show(WXBaseFragment);
@@ -169,5 +171,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             exitBy2Click(); // 调用双击退出函数
         }
         return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 }

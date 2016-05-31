@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:id="@+id/login"
-    android:text="登陆"
-    android:textSize="25dp"
-    android:layout_height="wrap_content" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/background_new"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        >
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_divider"
+            />
+    </RelativeLayout >
+
+</RelativeLayout >

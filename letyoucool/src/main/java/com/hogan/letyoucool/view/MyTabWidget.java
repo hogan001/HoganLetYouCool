@@ -213,7 +213,7 @@ public class MyTabWidget extends LinearLayout {
 		width = Math.max(getMeasuredWidth(), widthSpecSize);
 		height = Math.max(this.getBackground().getIntrinsicHeight(),
 				heightSpecSize);
-		setMeasuredDimension(width, height-50);
+		setMeasuredDimension(width, height-30);
 	}
 
 	// 回调接口，用于获取tab的选中状态
