@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/include_titlebar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/cardID_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="5"
+            android:text="430421198803280211" />
+
+        <Button
+            android:id="@+id/cardID_bt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="查询" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cardid_content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
